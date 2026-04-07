@@ -42,7 +42,7 @@ namespace DE.Pages
                 string fullPath = System.IO.Path.Combine(
                     AppDomain.CurrentDomain.BaseDirectory,
                     "Resources",
-                    "picture.png");
+                    "Заглушка.jpeg");
 
                 if (File.Exists(fullPath))
                     return new BitmapImage(new Uri(fullPath));

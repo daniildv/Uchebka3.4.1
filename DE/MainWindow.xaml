@@ -82,7 +82,7 @@
                           FontSize="14"/>
 
                 <Button x:Name="ProductsNavButton"
-                        Content="Товары"
+                        Content="Услуги"
                         Width="90"
                         Height="28"
                         Margin="5,0"

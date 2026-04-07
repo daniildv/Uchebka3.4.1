@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:local="clr-namespace:DE.Pages"
       Height="Auto" Width="Auto"
-      Title="Каталог товаров"
+      Title="Каталог услуг"
       Loaded="Page_Loaded"
       Background="White">
 
@@ -139,11 +139,11 @@
                         </StackPanel>
 
                         <TextBlock Text="{Binding Description}" FontSize="11" TextWrapping="Wrap" Margin="0,0,0,2" Foreground="Black"/>
-                        <TextBlock Text="{Binding Manufacturer, StringFormat='Производитель: {0}'}" FontSize="11" Margin="0,0,0,2" Foreground="Black"/>
+                        <TextBlock Text="{Binding Manufacturer, StringFormat='Государственный Орган: {0}'}" FontSize="11" Margin="0,0,0,2" Foreground="Black"/>
 
                         <!-- блок с ценой -->
                         <StackPanel Orientation="Horizontal" Margin="0,3,0,0">
-                            <TextBlock Text="Цена: " FontWeight="SemiBold" FontSize="13"/>
+                            <TextBlock Text="Цена услуги: " FontWeight="SemiBold" FontSize="13"/>
 
                             <!-- цена - черная, зачеркнутая если есть скидка -->
                             <TextBlock Text="{Binding Price, StringFormat={}{0:N2}}" FontSize="13">
@@ -230,8 +230,11 @@
                         
                         <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
                             <TextBlock Text="В наличии: " FontWeight="SemiBold" FontSize="11"/>
-                            <TextBlock Text="{Binding Quantity}" FontWeight="Bold" FontSize="11">
-                            </TextBlock>
+                            <TextBlock Text="{Binding Quantity}" FontWeight="Bold" FontSize="11"/>
+                            <TextBlock Text=" "/>
+                            <TextBlock Text="{Binding Unit}" FontWeight="Bold" FontSize="11"/>
+                            <TextBlock Text="."/>
+
                         </StackPanel>
                     </StackPanel>
 
@@ -318,7 +321,7 @@
                 <Button x:Name="AddProductButton"
                         Grid.Column="1"
                         Content="Добавить товар"
-                        Background="#E1E6EA"
+                        Background="#0046C1"
                         Foreground="White"
                         Margin="10,0,0,0"
                         Height="35"

@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Image Source="/Resources/logo.png"
+            <Image Source="/Resources/logo.jpeg"
                 Height="100"
                 Width="100" Margin="20">
             </Image>
@@ -34,7 +34,7 @@
                    Width="Auto" 
                    Height="Auto" 
                    Margin="20"
-                   Text="Посуда со вкусом для вашей идеальной кухни"
+                   Text="Нотариальная контора, нотариус на каждый день!"
                    TextWrapping="Wrap"/>
             
         </StackPanel>

@@ -12,7 +12,7 @@ namespace DE.Pages
 {
     public partial class ProductEditPage : Page
     {
-        private Product2 currentProduct;
+        private ProductNK currentProduct;
         private bool isNewProduct;
         private string currentPhotoFullPath;
         private static bool isEditWindowOpen = false;
@@ -26,7 +26,7 @@ namespace DE.Pages
 
         public ProductEditPage() : this(null) { }
 
-        public ProductEditPage(Product2 product)
+        public ProductEditPage(ProductNK product)
         {
             try
             {
@@ -91,9 +91,9 @@ namespace DE.Pages
                 {
                     int maxId = 0;
 
-                    if (db.Product2.Any())
+                    if (db.ProductNK.Any())
                     {
-                        maxId = db.Product2.Max(p => p.ID_Product);
+                        maxId = db.ProductNK.Max(p => p.ID_Product);
                     }
 
                     int nextId = maxId + 1;
@@ -132,7 +132,7 @@ namespace DE.Pages
 
                 using (var db = new user33Entities())
                 {
-                    var existingIds = db.Product2.Select(p => p.ID_Product).ToHashSet();
+                    var existingIds = db.ProductNK.Select(p => p.ID_Product).ToHashSet();
 
                     if (!isNewProduct && currentProduct != null && currentProduct.ID_Product > 0)
                     {
@@ -213,7 +213,7 @@ namespace DE.Pages
             catch (Exception ex)
             {
                 ShowErrorMessage("Ошибка загрузки данных",
-                    $"Не удалось загрузить данные товара: {ex.Message}");
+                    $"Не удалось загрузить данные Услуги: {ex.Message}");
             }
         }
 
@@ -224,7 +224,7 @@ namespace DE.Pages
             {
                 using (var db = new user33Entities())
                 {
-                    var categories = db.Product2
+                    var categories = db.ProductNK
                         .Select(p => p.Category)
                         .Where(c => c != null && c.Trim() != "")
                         .Distinct()
@@ -237,7 +237,7 @@ namespace DE.Pages
                         CategoryComboBox.Items.Add(category);
                     }
 
-                    var manufacturers = db.Product2
+                    var manufacturers = db.ProductNK
                         .Select(p => p.Manufacturer)
                         .Where(m => m != null && m.Trim() != "")
                         .Distinct()
@@ -250,7 +250,7 @@ namespace DE.Pages
                         ManufacturerComboBox.Items.Add(manufacturer);
                     }
 
-                    var suppliers = db.Product2
+                    var suppliers = db.ProductNK
                         .Select(p => p.Supplier)
                         .Where(s => s != null && s.Trim() != "")
                         .Distinct()
@@ -263,7 +263,7 @@ namespace DE.Pages
                         SupplierComboBox.Items.Add(supplier);
                     }
 
-                    var units = db.Product2
+                    var units = db.ProductNK
                         .Select(p => p.Unit)
                         .Where(u => u != null && u.Trim() != "")
                         .Distinct()
@@ -353,7 +353,7 @@ namespace DE.Pages
 
                     // Удаляем старое фото, если оно существует и не является заглушкой
                     if (!string.IsNullOrEmpty(currentPhotoFullPath) &&
-                        !currentPhotoFullPath.Contains("picture.png") &&
+                        !currentPhotoFullPath.Contains("Заглушка.jpeg") &&
                         File.Exists(savePath))
                     {
                         // Здесь можно добавить логику удаления старого файла если нужно
@@ -391,7 +391,7 @@ namespace DE.Pages
         {
             try
             {
-                if (string.IsNullOrEmpty(fullPath) || fullPath.Contains("picture.png"))
+                if (string.IsNullOrEmpty(fullPath) || fullPath.Contains("Заглушка.jpeg"))
                     return;
 
                 if (File.Exists(fullPath))
@@ -674,7 +674,7 @@ namespace DE.Pages
 
             if (string.IsNullOrWhiteSpace(NameTextBox.Text))
             {
-                ShowErrorMessage("Ошибка", "Введите наименование товара");
+                ShowErrorMessage("Ошибка", "Введите наименование Услуги");
                 NameTextBox.Focus();
                 return;
             }
@@ -688,7 +688,7 @@ namespace DE.Pages
 
             if (string.IsNullOrWhiteSpace(ManufacturerComboBox.Text))
             {
-                ShowErrorMessage("Ошибка", "Введите производителя");
+                ShowErrorMessage("Ошибка", "Введите государственный орган");
                 ManufacturerComboBox.Focus();
                 return;
             }
@@ -748,7 +748,7 @@ namespace DE.Pages
             if (!int.TryParse(IdTextBox.Text, out int productId) || productId == 0)
             {
                 ShowErrorMessage("Ошибка",
-                    "ID товара не может быть равен 0. " +
+                    "ID услуги не может быть равен 0. " +
                     (isNewProduct ? "Произошла ошибка при автоматической генерации ID." : ""));
                 if (isNewProduct)
                 {
@@ -760,7 +760,7 @@ namespace DE.Pages
             try
             {
                 var result = MessageBox.Show(
-                    isNewProduct ? "Добавить новый товар?" : "Сохранить изменения?",
+                    isNewProduct ? "Добавить новую Услугу?" : "Сохранить изменения?",
                     "Подтверждение",
                     MessageBoxButton.YesNo,
                     MessageBoxImage.Question);
@@ -773,26 +773,26 @@ namespace DE.Pages
                     if (isNewProduct)
                     {
                         int newId = int.Parse(IdTextBox.Text);
-                        if (db.Product2.Any(p => p.ID_Product == newId))
+                        if (db.ProductNK.Any(p => p.ID_Product == newId))
                         {
                             ShowErrorMessage("Ошибка",
-                                $"Товар с ID {newId} уже существует. Генерируем следующий свободный ID...");
+                                $"Услуга с ID {newId} уже существует. Генерируем следующий свободный ID...");
                             GenerateNextId();
                             return;
                         }
 
-                        currentProduct = new Product2();
+                        currentProduct = new ProductNK();
                         currentProduct.ID_Product = newId;
-                        db.Product2.Add(currentProduct);
+                        db.ProductNK.Add(currentProduct);
                     }
                     else
                     {
-                        currentProduct = db.Product2.Find(currentProduct.ID_Product);
+                        currentProduct = db.ProductNK.Find(currentProduct.ID_Product);
                     }
 
                     if (currentProduct == null)
                     {
-                        throw new Exception("Товар не найден в базе данных");
+                        throw new Exception("Услуга не найдена в базе данных");
                     }
 
                     currentProduct.Article = ArticleTextBox.Text.Trim();
@@ -811,7 +811,7 @@ namespace DE.Pages
                     await db.SaveChangesAsync();
 
                     ShowInfoMessage("Успешно",
-                        isNewProduct ? "Товар успешно добавлен" : "Изменения сохранены");
+                        isNewProduct ? "Услуга успешно добавлена" : "Изменения сохранены");
 
                     isEditWindowOpen = false;
 
@@ -839,7 +839,7 @@ namespace DE.Pages
                 if (result == MessageBoxResult.Yes)
                 {
                     if (isNewProduct && !string.IsNullOrEmpty(currentPhotoFullPath) &&
-                        !currentPhotoFullPath.Contains("picture.png"))
+                        !currentPhotoFullPath.Contains("Заглушка.jpeg"))
                     {
                         DeleteOldPhoto(currentPhotoFullPath);
                     }

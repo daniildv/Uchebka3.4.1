@@ -46,7 +46,7 @@ namespace DE
                 // поиск пользователя в БД
                 using (var db = new user33Entities())
                 {
-                    var user = db.User2
+                    var user = db.UserNK
                         .FirstOrDefault(u => u.Login == login && u.Password == password);
 
                     if (user == null)

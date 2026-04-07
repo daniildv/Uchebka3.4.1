@@ -9,11 +9,11 @@ namespace DE.Pages
 {
     public partial class OrderEditPage : Page
     {
-        private Order2 _order;
+        private OrderNK _order;
         private bool _isNew;
         private bool _isAdmin;
 
-        public OrderEditPage(Order2 order = null)
+        public OrderEditPage(OrderNK order = null)
         {
             InitializeComponent();
             this.Title = "Окно изменения заказов";
@@ -108,7 +108,7 @@ namespace DE.Pages
 
                 using (var db = new user33Entities())
                 {
-                    var product = db.Product2.FirstOrDefault(p => p.ID_Product == _order.ID_Product);
+                    var product = db.ProductNK.FirstOrDefault(p => p.ID_Product == _order.ID_Product);
 
                     if (product != null)
                     {
@@ -164,11 +164,11 @@ namespace DE.Pages
                 {
                     using (var db = new user33Entities())
                     {
-                        var orderToDelete = db.Order2.Find(_order.ID_Order);
+                        var orderToDelete = db.OrderNK.Find(_order.ID_Order);
 
                         if (orderToDelete != null)
                         {
-                            db.Order2.Remove(orderToDelete);
+                            db.OrderNK.Remove(orderToDelete);
                             db.SaveChanges();
 
                             MessageBox.Show("Заказ успешно удален",
@@ -220,9 +220,9 @@ namespace DE.Pages
                 using (var db = new user33Entities())
                 {
                     int maxId = 0;
-                    if (db.Order2.Any())
+                    if (db.OrderNK.Any())
                     {
-                        maxId = db.Order2.Max(o => o.ID_Order);
+                        maxId = db.OrderNK.Max(o => o.ID_Order);
                     }
                     int nextId = maxId + 1;
                     IdBox.Text = nextId.ToString();
@@ -239,7 +239,7 @@ namespace DE.Pages
         {
             using (var db = new user33Entities())
             {
-                var addresses = db.Address2.ToList();
+                var addresses = db.AddressNK.ToList();
                 AddressCombo.ItemsSource = addresses;
                 AddressCombo.DisplayMemberPath = "FullAddress";
                 AddressCombo.SelectedValuePath = "ID_Address";
@@ -313,10 +313,10 @@ namespace DE.Pages
                 {
                     if (_isNew)
                     {
-                        _order = new Order2();
-                        db.Order2.Add(_order);
+                        _order = new OrderNK();
+                        db.OrderNK.Add(_order);
 
-                        if (db.Order2.Any(o => o.OrderNumber == orderNum))
+                        if (db.OrderNK.Any(o => o.OrderNumber == orderNum))
                         {
                             MessageBox.Show($"Заказ с номером {orderNum} уже существует. Введите другой номер.");
                             return;
@@ -324,8 +324,8 @@ namespace DE.Pages
 
                         _order.RecipientCode = new Random().Next(1000, 9999);
                         _order.Quantity = 1;
-                        _order.ID_Product = db.Product2.First().ID_Product;
-                        _order.ID_User = db.User2.First().ID_User;
+                        _order.ID_Product = db.ProductNK.First().ID_Product;
+                        _order.ID_User = db.UserNK.First().ID_User;
 
                         if (int.TryParse(IdBox.Text, out int id))
                         {
@@ -334,9 +334,9 @@ namespace DE.Pages
                     }
                     else
                     {
-                        _order = db.Order2.Find(_order.ID_Order);
+                        _order = db.OrderNK.Find(_order.ID_Order);
 
-                        if (db.Order2.Any(o => o.OrderNumber == orderNum && o.ID_Order != _order.ID_Order))
+                        if (db.OrderNK.Any(o => o.OrderNumber == orderNum && o.ID_Order != _order.ID_Order))
                         {
                             MessageBox.Show($"Заказ с номером {orderNum} уже существует. Введите другой номер.");
                             return;

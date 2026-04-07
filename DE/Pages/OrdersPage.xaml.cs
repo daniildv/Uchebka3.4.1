@@ -18,7 +18,7 @@ namespace DE.Pages
 {
     public partial class OrdersPage : Page
     {
-        private List<Order2> allOrders;
+        private List<OrderNK> allOrders;
         private string currentSearch = "";
         private string currentStatusFilter = "Все статусы";
         private string currentSort = "none";
@@ -61,8 +61,8 @@ namespace DE.Pages
                 using (var db = new user33Entities())
                 {
                    
-                    allOrders = db.Order2
-                        .Include("Address2")  
+                    allOrders = db.OrderNK
+                        .Include("AddressNK")  
                         .ToList();
 
                     Debug.WriteLine($"Загружено заказов: {allOrders.Count}");
@@ -169,7 +169,7 @@ namespace DE.Pages
                 if (!IsAdmin) return;
 
                 var button = sender as Button;
-                var order = button?.CommandParameter as Order2;
+                var order = button?.CommandParameter as OrderNK;
 
                 if (order != null)
                 {
@@ -188,7 +188,7 @@ namespace DE.Pages
             if (!IsAdmin) return;
 
             var btn = sender as Button;
-            var order = btn?.CommandParameter as Order2;
+            var order = btn?.CommandParameter as OrderNK;
 
             if (order == null) return;
 
@@ -199,10 +199,10 @@ namespace DE.Pages
             {
                 using (var db = new user33Entities())
                 {
-                    var del = db.Order2.Find(order.ID_Order);
+                    var del = db.OrderNK.Find(order.ID_Order);
                     if (del != null)
                     {
-                        db.Order2.Remove(del);
+                        db.OrderNK.Remove(del);
                         db.SaveChanges();
                     }
                 }

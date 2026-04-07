@@ -18,7 +18,7 @@ namespace DE
 {
     public partial class MainWindow : Window
     {
-        private User2 currentUser;
+        private UserNK currentUser;
         private Stack<Page> navigationHistory = new Stack<Page>();
 
         public event NavigatedEventHandler Navigated;
@@ -28,7 +28,7 @@ namespace DE
             InitializeComponent();
         }
 
-        public MainWindow(User2 user)
+        public MainWindow(UserNK user)
         {
             InitializeComponent();
             try
@@ -225,7 +225,7 @@ namespace DE
         {
             var productsPage = new Pages.ProductsPage();
             Pages.ProductsPage.CurrentUserRole = currentUser?.UserRole ?? "Гость";
-            this.Title = "Товары";
+            this.Title = "Каталог Услуг";
             NavigateToPage(productsPage);
         }
 
@@ -274,6 +274,6 @@ namespace DE
             }
         }
 
-        public User2 CurrentUser => currentUser;
+        public UserNK CurrentUser => currentUser;
     }
 }
