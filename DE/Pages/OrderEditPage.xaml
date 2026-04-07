@@ -1,0 +1,256 @@
+﻿<Page x:Class="DE.Pages.OrderEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DE.Pages"
+      mc:Ignorable="d" 
+      Height="Auto" Width="Auto" 
+      Title="Управление заказами"
+      Background="#E1E6EA">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Background="#E1E6EA" Height="Auto" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Margin="20" Height="Auto" Width="Auto">
+            <TextBlock x:Name="TitleText" 
+                       FontSize="22" 
+                       FontWeight="SemiBold" 
+                       Margin="0,0,0,20" 
+                       FontFamily="Segoe UI"
+                       Foreground="Black"/>
+
+            <Border BorderThickness="1" 
+                    Padding="20" 
+                    Background="White"
+                    CornerRadius="4"
+                    BorderBrush="Black" Width="490" Height="auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <Grid Width="427">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="300"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+
+                    <TextBlock Grid.Row="0" 
+                               Grid.Column="0" 
+                               Text="ID заказа:" 
+                               Margin="5" 
+                               VerticalAlignment="Center" 
+                               FontFamily="Segoe UI"
+                               Foreground="Black"/>
+
+                    <TextBox x:Name="IdBox" 
+                             Grid.Row="0" 
+                             Grid.Column="1" 
+                             Margin="5" 
+                             Height="30" 
+                             Padding="5"
+                             IsReadOnly="True" 
+                             BorderThickness="1"
+                             FontFamily="Segoe UI"
+                             Foreground="Black"/>
+
+
+                    <TextBlock Grid.Row="1" 
+                               Grid.Column="0" 
+                               Text="Номер заказа:*" 
+                               Margin="5" 
+                               VerticalAlignment="Center"
+                               FontFamily="Segoe UI"
+                               Foreground="Black"/>
+
+                    <TextBox x:Name="OrderNumberBox" 
+                             Grid.Row="1" 
+                             Grid.Column="1" 
+                             Margin="5" 
+                             Height="30" 
+                             Padding="5"
+                             BorderThickness="1"
+                             FontFamily="Segoe UI"
+                             TextChanged="OrderNumberBox_TextChanged"/>
+
+
+                    <TextBlock Grid.Row="2" 
+                               Grid.Column="0" 
+                               Text="Статус:*" 
+                               Margin="5" 
+                               VerticalAlignment="Center"
+                               FontFamily="Segoe UI"
+                               Foreground="Black"/>
+
+                    <ComboBox x:Name="StatusCombo" 
+                              Grid.Row="2" 
+                              Grid.Column="1" 
+                              Margin="5" 
+                              Height="30"
+                              Padding="3"
+                              BorderThickness="1"
+                              Background="White">
+                        <ComboBoxItem Content="В обработке" FontFamily="Segoe UI"/>
+                        <ComboBoxItem Content="Доставлен" FontFamily="Segoe UI"/>
+                        <ComboBoxItem Content="Отменен" FontFamily="Segoe UI"/>
+                        <ComboBoxItem Content="Новый" FontFamily="Segoe UI"/>
+                        <ComboBoxItem Content="Завершен" FontFamily="Segoe UI"/>
+                    </ComboBox>
+
+
+                    <TextBlock Grid.Row="3" 
+                               Grid.Column="0" 
+                               Text="Адрес:*" 
+                               Margin="5" 
+                               VerticalAlignment="Center"
+                               FontFamily="Segoe UI"
+                               Foreground="Black"/>
+
+                    <ComboBox x:Name="AddressCombo" 
+                              Grid.Row="3" 
+                              Grid.Column="1" 
+                              Margin="5" 
+                              Height="30"
+                              Padding="3"
+                              BorderThickness="1"
+                              FontFamily="Segoe UI"
+                              Background="White"
+                              Foreground="Black"/>
+
+                    <TextBlock Grid.Row="4" 
+                               Grid.Column="0" 
+                               Text="Дата заказа:*" 
+                               Margin="5" 
+                               VerticalAlignment="Center" 
+                               FontFamily="Segoe UI"
+                               Foreground="Black"/>
+
+                    <DatePicker x:Name="OrderDate" 
+                                Grid.Row="4" 
+                                Grid.Column="1" 
+                                Margin="5" 
+                                Height="30"
+                                FontFamily="Segoe UI"
+                                BorderThickness="1"/>
+
+
+                    <TextBlock Grid.Row="5" 
+                               Grid.Column="0" 
+                               Text="Дата выдачи:*" 
+                               Margin="5" 
+                               VerticalAlignment="Center"
+                               FontFamily="Segoe UI"
+                               Foreground="Black"/>
+
+                    <DatePicker x:Name="DeliveryDate" 
+                                Grid.Row="5" 
+                                Grid.Column="1" 
+                                Margin="5" 
+                                Height="30"
+                                FontFamily="Segoe UI"
+                                BorderThickness="1"/>
+
+                    <!-- Кнопки для изменения товара и удаления заказа -->
+                    <StackPanel Grid.Row="6" 
+                                Orientation="Horizontal" 
+                                HorizontalAlignment="Left" 
+                                Margin="0,10,0,0" 
+                                Grid.ColumnSpan="2">
+
+                        <Button x:Name="EditProductBtn" 
+                                Content="Редактировать товар" 
+                                Width="150" 
+                                Height="35" 
+                                Margin="5,0,5,0" 
+                                Click="EditProductBtn_Click" 
+                                Background="#E1E6EA"
+                                Foreground="White"
+                                FontWeight="Bold"
+                                FontFamily="Segoe UI"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                Visibility="Collapsed">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="4"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+                        <Button x:Name="DeleteOrderBtn" 
+                                Content="Удалить заказ" 
+                                Width="120" 
+                                Height="35" 
+                                Margin="5,0,5,0" 
+                                Click="DeleteOrderBtn_Click" 
+                                Background="Red"
+                                Foreground="White"
+                                FontWeight="Bold"
+                                FontFamily="Segoe UI"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                Visibility="Collapsed">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="4"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackPanel>
+
+
+                    <StackPanel Grid.Row="7" 
+                                Orientation="Horizontal" 
+                                HorizontalAlignment="Left" 
+                                Margin="104,10,0,0" Grid.ColumnSpan="2">
+
+                        <Button x:Name="SaveBtn" 
+                                Content="Сохранить" 
+                                Width="100" 
+                                Height="35" 
+                                Margin="5" 
+                                Click="Save_Click" 
+                                Background="#0046C1"
+                                Foreground="White"
+                                FontWeight="Bold"
+                                FontFamily="Segoe UI"
+                                BorderThickness="0"
+                                Cursor="Hand">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="4"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+                        <Button x:Name="CancelBtn" 
+                                Content="Отмена" 
+                                Width="100" 
+                                Height="35" 
+                                Margin="5" 
+                                Click="Cancel_Click" 
+                                Foreground="Black"
+                                FontWeight="Bold"
+                                FontFamily="Segoe UI"
+                                BorderThickness="0"
+                                Cursor="Hand">
+
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="4"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            
+        </StackPanel>
+    </ScrollViewer>
+</Page>
