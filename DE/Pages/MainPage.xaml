@@ -22,14 +22,14 @@
                    HorizontalAlignment="Center" 
                    VerticalAlignment="Top"
                    FontWeight="Bold"
-                   FontFamily="Segoe UI"
+                   FontFamily="Times New Roman"
                    Foreground="Black" Width="Auto" Height="Auto" Margin="20"/>
             
             <TextBlock FontSize="25" 
                     HorizontalAlignment="Center" 
                     VerticalAlignment="Top"
                     FontWeight="Bold"
-                    FontFamily="Segoe UI"
+                    FontFamily="Times New Roman"
                     Foreground="Black"
                    Width="Auto" 
                    Height="Auto" 

@@ -41,7 +41,7 @@
                          TextChanged="SearchTextBox_TextChanged"
                          ToolTip="Поиск по номеру заказа"
                          BorderBrush="Black"
-                         FontFamily="Segoe UI"
+                         FontFamily="Times New Roman"
                          BorderThickness="1"
                          Background="White"
                          Visibility="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=CanInteract, Converter={StaticResource BooleanToVisibilityConverter}}"/>
@@ -54,17 +54,17 @@
                           Height="35"
                           Margin="10,0,0,0"
                           SelectionChanged="StatusFilterComboBox_SelectionChanged"
-                          FontFamily="Segoe UI"
+                          FontFamily="Times New Roman"
                           BorderThickness="1"
                           Background="White"
                           Padding="5,0"
                           Visibility="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=CanInteract, Converter={StaticResource BooleanToVisibilityConverter}}">
-                    <ComboBoxItem Content="Все статусы" Tag="all" IsSelected="True" FontFamily="Segoe UI"/>
-                    <ComboBoxItem Content="В обработке" Tag="В обработке" FontFamily="Segoe UI"/>
-                    <ComboBoxItem Content="Доставлен" Tag="Доставлен" FontFamily="Segoe UI"/>
-                    <ComboBoxItem Content="Отменен" Tag="Отменен" FontFamily="Segoe UI"/>
-                    <ComboBoxItem Content="Новый" Tag="Новый" FontFamily="Segoe UI"/>
-                    <ComboBoxItem Content="Завершен" Tag="Завершен" FontFamily="Segoe UI"/>
+                    <ComboBoxItem Content="Все статусы" Tag="all" IsSelected="True" FontFamily="Times New Roman"/>
+                    <ComboBoxItem Content="В обработке" Tag="В обработке" FontFamily="Times New Roman"/>
+                    <ComboBoxItem Content="Доставлен" Tag="Доставлен" FontFamily="Times New Roman"/>
+                    <ComboBoxItem Content="Отменен" Tag="Отменен" FontFamily="Times New Roman"/>
+                    <ComboBoxItem Content="Новый" Tag="Новый" FontFamily="Times New Roman"/>
+                    <ComboBoxItem Content="Завершен" Tag="Завершен" FontFamily="Times New Roman"/>
                 </ComboBox>
 
 
@@ -80,7 +80,7 @@
                         Click="AddOrderButton_Click"
                         Cursor="Hand"
                         BorderThickness="0"
-                        FontFamily="Segoe UI"
+                        FontFamily="Times New Roman"
                         FontWeight="Bold"
                         Visibility="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}"/>
             </Grid>
@@ -97,7 +97,7 @@
                            VerticalAlignment="Center" 
                            Margin="0,0,10,0"
                            Foreground="Black"
-                           FontFamily="Segoe UI"
+                           FontFamily="Times New Roman"
                            Visibility="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=CanInteract, Converter={StaticResource BooleanToVisibilityConverter}}"/>
 
                 <!-- ограничение функционала для клиента и гостя через переменную выпадающего списка сортировки -->
@@ -106,7 +106,7 @@
                           Height="30"
                           SelectionChanged="SortComboBox_SelectionChanged"
                           BorderThickness="1"
-                          FontFamily="Segoe UI"
+                          FontFamily="Times New Roman"
                           Background="White"
                           Padding="5,0"
                           Visibility="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=CanInteract, Converter={StaticResource BooleanToVisibilityConverter}}">
@@ -146,13 +146,13 @@
 
 
                                 <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="0,0,0,5">
-                                    <TextBlock Text="Артикул заказа: " FontWeight="Bold" Foreground="Black" FontFamily="Segoe UI"/>
-                                    <TextBlock Text="{Binding OrderNumber}" Foreground="Black" FontWeight="Bold" FontFamily="Segoe UI"/>
+                                    <TextBlock Text="Артикул заказа: " FontWeight="Bold" Foreground="Black" FontFamily="Times New Roman"/>
+                                    <TextBlock Text="{Binding OrderNumber}" Foreground="Black" FontWeight="Bold" FontFamily="Times New Roman"/>
                                 </StackPanel>
 
 
                                 <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="0,0,0,5">
-                                    <TextBlock Text="Дата доставки: " FontWeight="Bold" Foreground="Black"/>
+                                    <TextBlock Text="Дата оказания заказа: " FontWeight="Bold" Foreground="Black"/>
                                     <TextBlock Text="{Binding DeliveryDate, StringFormat='dd.MM.yyyy'}" Foreground="Black"/>
                                 </StackPanel>
 
@@ -164,7 +164,7 @@
 
 
                                 <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,0,0,5">
-                                    <TextBlock Text="Адрес пункта выдачи: " FontWeight="Bold" Foreground="Black"/>
+                                    <TextBlock Text="Адрес конторы натариуса: " FontWeight="Bold" Foreground="Black"/>
                                     <TextBlock Foreground="Black">
                                         <TextBlock.Text>
                                             <MultiBinding StringFormat="{}{0}, {1}, ул. {2}, д. {3}">

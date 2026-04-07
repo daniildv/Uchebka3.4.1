@@ -313,7 +313,7 @@
                          TextChanged="SearchTextBox_TextChanged"
                          ToolTip="Введите текст для поиска по названию, описанию, производителю или поставщику"
                          Style="{StaticResource SearchTextBoxStyle}" 
-                         FontFamily="Segoe UI"
+                         FontFamily="Times New Roman"
                          BorderBrush="Black"
                          Visibility="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=CanInteract, Converter={StaticResource BooleanToVisibilityConverter}}"/>
 
@@ -330,7 +330,7 @@
                         Cursor="Hand"
                         BorderThickness="0"
                         FontWeight="Bold"
-                        FontFamily="Segoe UI">
+                        FontFamily="Times New Roman">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Visibility" Value="Collapsed"/>
@@ -364,16 +364,16 @@
                               ToolTip="Выберите тип сортировки"
                               BorderThickness="0"
                               Background="White"
-                              FontFamily="Segoe UI"
+                              FontFamily="Times New Roman"
                               Padding="5,0"
                               Visibility="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=CanInteract, Converter={StaticResource BooleanToVisibilityConverter}}">
-                        <ComboBoxItem Content="Без сортировки" Tag="none" FontFamily="Segoe UI"/>
-                        <ComboBoxItem Content="По количеству (возрастание)" Tag="quantity_asc" FontFamily="Segoe UI"/>
-                        <ComboBoxItem Content="По количеству (убывание)" Tag="quantity_desc" FontFamily="Segoe UI"/>
-                        <ComboBoxItem Content="По цене (возрастание)" Tag="price_asc" FontFamily="Segoe UI"/>
-                        <ComboBoxItem Content="По цене (убывание)" Tag="price_desc" FontFamily="Segoe UI"/>
-                        <ComboBoxItem Content="По названию (А-Я)" Tag="name_asc" FontFamily="Segoe UI"/>
-                        <ComboBoxItem Content="По названию (Я-А)" Tag="name_desc" FontFamily="Segoe UI"/>
+                        <ComboBoxItem Content="Без сортировки" Tag="none" FontFamily="Times New Roman"/>
+                        <ComboBoxItem Content="По количеству (возрастание)" Tag="quantity_asc" FontFamily="Times New Roman"/>
+                        <ComboBoxItem Content="По количеству (убывание)" Tag="quantity_desc" FontFamily="Times New Roman"/>
+                        <ComboBoxItem Content="По цене (возрастание)" Tag="price_asc" FontFamily="Times New Roman"/>
+                        <ComboBoxItem Content="По цене (убывание)" Tag="price_desc" FontFamily="Times New Roman"/>
+                        <ComboBoxItem Content="По названию (А-Я)" Tag="name_asc" FontFamily="Times New Roman"/>
+                        <ComboBoxItem Content="По названию (Я-А)" Tag="name_desc" FontFamily="Times New Roman"/>
                     </ComboBox>
                 </Border>
 
@@ -386,7 +386,7 @@
                               ToolTip="Выберите поставщика для фильтрации"
                               BorderThickness="0"
                               Background="White"
-                              FontFamily="Segoe UI"
+                              FontFamily="Times New Roman"
                               Padding="5,0"
                               Visibility="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=CanInteract, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                 </Border>
@@ -397,7 +397,7 @@
                       VerticalScrollBarVisibility="Auto"
                       Background="#E1E6EA">
             <ItemsControl x:Name="ProductsList"
-                          ItemTemplate="{StaticResource ProductTemplate}" Margin="10" FontFamily="Segoe UI"/>
+                          ItemTemplate="{StaticResource ProductTemplate}" Margin="10" FontFamily="Times New Roman"/>
         </ScrollViewer>
     </Grid>
 </Page>

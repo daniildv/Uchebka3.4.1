@@ -24,18 +24,19 @@
 
         <DockPanel Grid.Row="0" LastChildFill="True" Height="50" Background="White">
 
-          
             <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" Margin="10,0">
-                <Button Content="Выход"
+                
+                 <Button Content="Выход"
                        Width="70"
                        Height="28"
                        Click="LogoutButton_Click"
                        Background="#0046C1"
                        Foreground="White"
                        FontWeight="Bold"
-                       FontFamily="Segoe UI"
+                       FontFamily="Times New Roman"
                        BorderThickness="0"
-                       VerticalAlignment="Center"/>
+                       VerticalAlignment="Center"/>   
+                
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" 
@@ -50,7 +51,7 @@
                        Background="#0046C1"
                        Foreground="White"
                        FontWeight="Bold"
-                       FontFamily="Segoe UI"
+                       FontFamily="Times New Roman"
                        BorderThickness="0"/>
             </StackPanel>
             
@@ -61,7 +62,7 @@
                       HorizontalAlignment="Center"
                       Margin="20,0,0,0"
                       FontWeight="Bold"
-                      FontFamily="Segoe UI"
+                      FontFamily="Times New Roman"
                       FontSize="16"
                       Foreground="Black"/>
 
@@ -77,7 +78,7 @@
                           VerticalAlignment="Center"
                           Margin="0,0,15,0"
                           Foreground="Black"
-                          FontFamily="Segoe UI"
+                          FontFamily="Times New Roman"
                           FontWeight="SemiBold"
                           FontSize="14"/>
 
@@ -90,7 +91,7 @@
                         Background="#0046C1"
                         Foreground="White"
                         FontWeight="Bold"
-                        FontFamily="Segoe UI"
+                        FontFamily="Times New Roman"
                         BorderThickness="0"/>
 
                 <Button x:Name="OrdersNavButton"
@@ -102,7 +103,7 @@
                     Background="#0046C1"
                     Foreground="White"
                     FontWeight="Bold"
-                    FontFamily="Segoe UI"
+                    FontFamily="Times New Roman"
                     BorderThickness="0"/>
             </StackPanel>
         </DockPanel>

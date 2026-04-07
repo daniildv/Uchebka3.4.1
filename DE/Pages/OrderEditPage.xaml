@@ -15,7 +15,7 @@
                        FontSize="22" 
                        FontWeight="SemiBold" 
                        Margin="0,0,0,20" 
-                       FontFamily="Segoe UI"
+                       FontFamily="Times New Roman"
                        Foreground="Black"/>
 
             <Border BorderThickness="1" 
@@ -46,7 +46,7 @@
                                Text="ID заказа:" 
                                Margin="5" 
                                VerticalAlignment="Center" 
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <TextBox x:Name="IdBox" 
@@ -57,7 +57,7 @@
                              Padding="5"
                              IsReadOnly="True" 
                              BorderThickness="1"
-                             FontFamily="Segoe UI"
+                             FontFamily="Times New Roman"
                              Foreground="Black"/>
 
 
@@ -66,7 +66,7 @@
                                Text="Номер заказа:*" 
                                Margin="5" 
                                VerticalAlignment="Center"
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <TextBox x:Name="OrderNumberBox" 
@@ -76,7 +76,7 @@
                              Height="30" 
                              Padding="5"
                              BorderThickness="1"
-                             FontFamily="Segoe UI"
+                             FontFamily="Times New Roman"
                              TextChanged="OrderNumberBox_TextChanged"/>
 
 
@@ -85,7 +85,7 @@
                                Text="Статус:*" 
                                Margin="5" 
                                VerticalAlignment="Center"
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <ComboBox x:Name="StatusCombo" 
@@ -96,11 +96,10 @@
                               Padding="3"
                               BorderThickness="1"
                               Background="White">
-                        <ComboBoxItem Content="В обработке" FontFamily="Segoe UI"/>
-                        <ComboBoxItem Content="Доставлен" FontFamily="Segoe UI"/>
-                        <ComboBoxItem Content="Отменен" FontFamily="Segoe UI"/>
-                        <ComboBoxItem Content="Новый" FontFamily="Segoe UI"/>
-                        <ComboBoxItem Content="Завершен" FontFamily="Segoe UI"/>
+                        <ComboBoxItem Content="В обработке" FontFamily="Times New Roman"/>
+                        <ComboBoxItem Content="Отменен" FontFamily="Times New Roman"/>
+                        <ComboBoxItem Content="Новый" FontFamily="Times New Roman"/>
+                        <ComboBoxItem Content="Завершен" FontFamily="Times New Roman"/>
                     </ComboBox>
 
 
@@ -109,7 +108,7 @@
                                Text="Адрес:*" 
                                Margin="5" 
                                VerticalAlignment="Center"
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <ComboBox x:Name="AddressCombo" 
@@ -119,7 +118,7 @@
                               Height="30"
                               Padding="3"
                               BorderThickness="1"
-                              FontFamily="Segoe UI"
+                              FontFamily="Times New Roman"
                               Background="White"
                               Foreground="Black"/>
 
@@ -128,7 +127,7 @@
                                Text="Дата заказа:*" 
                                Margin="5" 
                                VerticalAlignment="Center" 
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <DatePicker x:Name="OrderDate" 
@@ -136,7 +135,7 @@
                                 Grid.Column="1" 
                                 Margin="5" 
                                 Height="30"
-                                FontFamily="Segoe UI"
+                                FontFamily="Times New Roman"
                                 BorderThickness="1"/>
 
 
@@ -145,7 +144,7 @@
                                Text="Дата выдачи:*" 
                                Margin="5" 
                                VerticalAlignment="Center"
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <DatePicker x:Name="DeliveryDate" 
@@ -153,7 +152,7 @@
                                 Grid.Column="1" 
                                 Margin="5" 
                                 Height="30"
-                                FontFamily="Segoe UI"
+                                FontFamily="Times New Roman"
                                 BorderThickness="1"/>
 
                     <!-- Кнопки для изменения товара и удаления заказа -->
@@ -172,7 +171,7 @@
                                 Background="#E1E6EA"
                                 Foreground="White"
                                 FontWeight="Bold"
-                                FontFamily="Segoe UI"
+                                FontFamily="Times New Roman"
                                 BorderThickness="0"
                                 Cursor="Hand"
                                 Visibility="Collapsed">
@@ -192,7 +191,7 @@
                                 Background="Red"
                                 Foreground="White"
                                 FontWeight="Bold"
-                                FontFamily="Segoe UI"
+                                FontFamily="Times New Roman"
                                 BorderThickness="0"
                                 Cursor="Hand"
                                 Visibility="Collapsed">
@@ -219,7 +218,7 @@
                                 Background="#0046C1"
                                 Foreground="White"
                                 FontWeight="Bold"
-                                FontFamily="Segoe UI"
+                                FontFamily="Times New Roman"
                                 BorderThickness="0"
                                 Cursor="Hand">
                             <Button.Resources>
@@ -237,7 +236,7 @@
                                 Click="Cancel_Click" 
                                 Foreground="Black"
                                 FontWeight="Bold"
-                                FontFamily="Segoe UI"
+                                FontFamily="Times New Roman"
                                 BorderThickness="0"
                                 Cursor="Hand">
 

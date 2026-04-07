@@ -31,7 +31,7 @@
                    Grid.Row="0" Grid.ColumnSpan="2"
                    FontSize="22" 
                    FontWeight="SemiBold"
-                   FontFamily="Segoe UI"
+                   FontFamily="Times New Roman"
                    Margin="0,0,0,20"
                    Foreground="Black"/>
 
@@ -67,7 +67,7 @@
                                Text="ID:" 
                                Margin="5" 
                                VerticalAlignment="Center"
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <TextBox x:Name="IdTextBox" 
@@ -77,7 +77,7 @@
                              Padding="5"
                              IsReadOnly="True" 
                              Background="White" 
-                             FontFamily="Segoe UI"
+                             FontFamily="Times New Roman"
                              BorderThickness="1"
                              Foreground="Black"/>
 
@@ -86,7 +86,7 @@
                                Text="Артикул:" 
                                Margin="5" 
                                VerticalAlignment="Center"
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <TextBox x:Name="ArticleTextBox" 
@@ -94,7 +94,7 @@
                              Margin="5" 
                              Height="30" 
                              Padding="5"
-                             FontFamily="Segoe UI"
+                             FontFamily="Times New Roman"
                              BorderThickness="1"
                              TextChanged="RequiredField_TextChanged"
                              ToolTip="Введите артикул товара"/>
@@ -104,7 +104,7 @@
                                Text="Наименование: " 
                                Margin="5" 
                                VerticalAlignment="Center"
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <TextBox x:Name="NameTextBox" 
@@ -112,7 +112,7 @@
                              Margin="5" 
                              Height="30" 
                              Padding="5"
-                             FontFamily="Segoe UI"
+                             FontFamily="Times New Roman"
                              BorderThickness="1"
                              TextChanged="RequiredField_TextChanged"
                              ToolTip="Введите наименование товара"/>
@@ -122,7 +122,7 @@
                                Text="Категория:" 
                                Margin="5" 
                                VerticalAlignment="Center"
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <ComboBox x:Name="CategoryComboBox" 
@@ -130,7 +130,7 @@
                               Margin="5" 
                               Height="30"
                               Padding="3"
-                              FontFamily="Segoe UI"
+                              FontFamily="Times New Roman"
                               BorderThickness="1"
                               Background="White"
                               SelectionChanged="RequiredField_TextChanged"
@@ -142,7 +142,7 @@
                                Text="Описание: " 
                                Margin="5" 
                                VerticalAlignment="Center"
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <TextBox x:Name="DescriptionTextBox" 
@@ -153,7 +153,7 @@
                              TextWrapping="Wrap"
                              AcceptsReturn="True"
                              VerticalScrollBarVisibility="Auto"
-                             FontFamily="Segoe UI"
+                             FontFamily="Times New Roman"
                              BorderThickness="1"
                              ToolTip="Введите описание товара"/>
 
@@ -161,7 +161,7 @@
                                Text="Производитель:" 
                                Margin="5" 
                                VerticalAlignment="Center"
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <ComboBox x:Name="ManufacturerComboBox" 
@@ -169,7 +169,7 @@
                               Margin="5" 
                               Height="30"
                               Padding="3"
-                              FontFamily="Segoe UI"
+                              FontFamily="Times New Roman"
                               BorderThickness="1"
                               Background="White"
                               SelectionChanged="RequiredField_TextChanged"
@@ -180,7 +180,7 @@
                                Text="Поставщик:" 
                                Margin="5" 
                                VerticalAlignment="Center"
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <ComboBox x:Name="SupplierComboBox" 
@@ -188,7 +188,7 @@
                               Margin="5" 
                               Height="30"
                               Padding="3"
-                              FontFamily="Segoe UI"
+                              FontFamily="Times New Roman"
                               BorderThickness="1"
                               Background="White"
                               SelectionChanged="RequiredField_TextChanged"
@@ -200,7 +200,7 @@
                                Text="Цена:" 
                                Margin="5" 
                                VerticalAlignment="Center"
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <TextBox x:Name="PriceTextBox" 
@@ -208,7 +208,7 @@
                              Margin="5" 
                              Height="30" 
                              Padding="5"
-                             FontFamily="Segoe UI"
+                             FontFamily="Times New Roman"
                              BorderThickness="1"
                              TextChanged="PriceTextBox_TextChanged"
                              ToolTip="Введите цену"/>
@@ -218,7 +218,7 @@
                                Text="Единица измерения:" 
                                Margin="5" 
                                VerticalAlignment="Center"
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <ComboBox x:Name="UnitComboBox" 
@@ -226,7 +226,7 @@
                               Margin="5" 
                               Height="30"
                               Padding="3"
-                              FontFamily="Segoe UI"
+                              FontFamily="Times New Roman"
                               BorderThickness="1"
                               Background="White"
                               SelectionChanged="RequiredField_TextChanged"
@@ -237,7 +237,7 @@
                                Text="Количество:" 
                                Margin="5" 
                                VerticalAlignment="Center"
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <TextBox x:Name="QuantityTextBox" 
@@ -245,7 +245,7 @@
                              Margin="5" 
                              Height="30" 
                              Padding="5"
-                             FontFamily="Segoe UI"
+                             FontFamily="Times New Roman"
                              BorderThickness="1"
                              TextChanged="QuantityTextBox_TextChanged"
                              ToolTip="Введите количество"/>
@@ -255,7 +255,7 @@
                                Text="Скидка (%):" 
                                Margin="5" 
                                VerticalAlignment="Center"
-                               FontFamily="Segoe UI"
+                               FontFamily="Times New Roman"
                                Foreground="Black"/>
 
                     <TextBox x:Name="DiscountTextBox" 
@@ -263,7 +263,7 @@
                              Margin="5" 
                              Height="30" 
                              Padding="5"
-                             FontFamily="Segoe UI"
+                             FontFamily="Times New Roman"
                              BorderThickness="1"
                              TextChanged="DiscountTextBox_TextChanged"
                              ToolTip="Введите скидку (0-100)"/>
@@ -293,7 +293,7 @@
                                FontSize="14"
                                Margin="0,0,0,10"
                                Foreground="Black"
-                               FontFamily="Segoe UI"/>
+                               FontFamily="Times New Roman"/>
 
                 
                     <Border Grid.Row="1"
@@ -322,7 +322,7 @@
                             Background="#E1E6EA"
                             Foreground="Black"
                             FontWeight="Bold"
-                            FontFamily="Segoe UI"
+                            FontFamily="Times New Roman"
                             BorderThickness="0"
                             Cursor="Hand">
                         <Button.Resources>
@@ -357,7 +357,7 @@
                         Background="#0046C1"
                         Foreground="White"
                         FontWeight="Bold"
-                        FontFamily="Segoe UI"
+                        FontFamily="Times New Roman"
                         BorderThickness="0"
                         Cursor="Hand">
                     <Button.Resources>
@@ -383,7 +383,7 @@
                         Click="CancelButton_Click"
                         Foreground="Black"
                         FontWeight="Bold"
-                        FontFamily="Segoe UI"
+                        FontFamily="Times New Roman"
                         BorderThickness="0"
                         Cursor="Hand">
                     <Button.Resources>
