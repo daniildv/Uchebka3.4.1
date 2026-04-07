@@ -274,7 +274,7 @@ namespace DE.Pages
 
                     if (units.Count == 0)
                     {
-                        string[] defaultUnits = { "шт", "кг", "л", "м", "упак", "компл", "пар" };
+                        string[] defaultUnits = { "шт", "стр", "л", "м", };
                         foreach (var unit in defaultUnits)
                         {
                             UnitComboBox.Items.Add(unit);
