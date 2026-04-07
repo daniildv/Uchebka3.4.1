@@ -141,7 +141,7 @@
 
                     <TextBlock Grid.Row="5" 
                                Grid.Column="0" 
-                               Text="Дата выдачи:*" 
+                               Text="Дата оказания:*" 
                                Margin="5" 
                                VerticalAlignment="Center"
                                FontFamily="Times New Roman"

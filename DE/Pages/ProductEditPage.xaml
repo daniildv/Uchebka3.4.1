@@ -158,7 +158,7 @@
                              ToolTip="Введите описание товара"/>
 
                     <TextBlock Grid.Row="5" Grid.Column="0" 
-                               Text="Производитель:" 
+                               Text="Гос. отдел:" 
                                Margin="5" 
                                VerticalAlignment="Center"
                                FontFamily="Times New Roman"
@@ -177,7 +177,7 @@
                               IsEditable="True"/>
 
                     <TextBlock Grid.Row="6" Grid.Column="0" 
-                               Text="Поставщик:" 
+                               Text="Учредитель:" 
                                Margin="5" 
                                VerticalAlignment="Center"
                                FontFamily="Times New Roman"
